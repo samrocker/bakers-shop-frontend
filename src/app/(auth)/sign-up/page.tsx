@@ -27,7 +27,7 @@ const Page: React.FC = () => {
     setLoading(true);
     try {
       console.log("Registering user with mobile number:", mobileNumber);
-      const response = await axios.post("https://api.marutibakersmart.com/v1/auth/register", {
+      const response = await axios.post("/api/v1/auth/register", {
         mobileNumber,
         password
       });
@@ -54,9 +54,8 @@ const Page: React.FC = () => {
     setLoading(true);
     try {
       console.log("Verifying OTP for mobile number:", mobileNumber);
-      const response = await axios.post("https://api.marutibakersmart.com/v1/auth/login", {
+      const response = await axios.post("/api/v1/auth/verify-otp", {
         mobileNumber,
-        password,
         otp
       });
 
