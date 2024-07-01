@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap');
+
 @tailwind base;
   @tailwind components;
   @tailwind utilities;
@@ -82,17 +84,11 @@
     .flex-end {
       @apply flex justify-end items-center;
     }
-    .bg-button {
-      background: var(--accent-light-full, #0065B8);
-    }
-    .bg-color {
-      background: radial-gradient(11.95% 36% at 80.44% 57.9%, #004378 0%, #000A12 100%) 
-    }
-    .bg-color-mobile {
-      background: #000A12;
-    }
     .text-link {
       color: var(--accent-light-full, #0065B8);
+    }
+    .bg-hero {
+      background-color: #FAF5E1;
     }
   }
 

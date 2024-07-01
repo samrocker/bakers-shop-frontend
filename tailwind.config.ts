@@ -18,6 +18,9 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        Merienda: ['Merienda', "cursive"]
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
