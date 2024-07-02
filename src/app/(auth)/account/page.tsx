@@ -1,14 +1,16 @@
 'use client'
 
 import { Button } from "@/components/ui/button";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import axios from "axios";
 import image1 from '../../../../public/images/product-3.jpg';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useRouter } from "next/navigation";
 
-const Page: React.FC = () => {
+const Page = () => {
+  const router = useRouter();
   const [mobileNumber, setMobileNumber] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [agree, setAgree] = useState<boolean>(false);
@@ -27,7 +29,7 @@ const Page: React.FC = () => {
     setLoading(true);
     try {
       console.log("Registering user with mobile number:", mobileNumber);
-      const response = await axios.post("/api/v1/auth/register", {
+      const response = await axios.post("https://api.marutibakersmart.com/v1/auth/register", {
         mobileNumber,
         password
       });
@@ -54,11 +56,14 @@ const Page: React.FC = () => {
     setLoading(true);
     try {
       console.log("Verifying OTP for mobile number:", mobileNumber);
-      const response = await axios.post("/api/v1/auth/verify-otp", {
+      const response = await axios.post("https://api.marutibakersmart.com/v1/auth/login", {
         mobileNumber,
         otp
       });
 
+      const getToken = response.data.accessToken
+
+      localStorage.setItem("Token" , getToken)
       console.log("OTP verification response:", response.data);
       toast.success("Account verified successfully!");
       // Handle successful OTP verification (e.g., redirect to another page, show success message, etc.)
@@ -74,6 +79,15 @@ const Page: React.FC = () => {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    
+    if (token) {
+      router.push("/");
+    }
+  }, [router]);
+
 
   return (
     <section className="bg-[#F5EEDE]">
@@ -152,7 +166,7 @@ const Page: React.FC = () => {
               )}
             </div>
             <div className="h-full flex-[1] w-full flex-center">
-              <Image src={image1} alt="Product Image" className="w-full object-cover rounded-r-3xl hidden lg:block" />
+              <Image src={image1} width={400} height={400} alt="Product Image" className="w-full object-cover rounded-r-3xl hidden lg:block" />
             </div>
           </div>
         </div>
