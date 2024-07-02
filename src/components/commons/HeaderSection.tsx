@@ -27,41 +27,53 @@ const HeaderSection = () => {
     const icons = document.querySelectorAll(".icon");
 
     if (logo) {
-      gsap.fromTo(logo, {
-        opacity: 0,
-        x: -50,
-      }, {
-        opacity: 1,
-        x: 0,
-        duration: 1,
-        ease: "power2.out",
-      });
+      gsap.fromTo(
+        logo,
+        {
+          opacity: 0,
+          x: -50,
+        },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1,
+          ease: "power2.out",
+        }
+      );
     }
 
     if (navLinks.length) {
-      gsap.fromTo(navLinks, {
-        opacity: 0,
-        y: -50,
-      }, {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        stagger: 0.2,
-        ease: "power2.out",
-      });
+      gsap.fromTo(
+        navLinks,
+        {
+          opacity: 0,
+          y: -50,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          stagger: 0.2,
+          ease: "power2.out",
+        }
+      );
     }
 
     if (icons.length) {
-      gsap.fromTo(icons, {
-        opacity: 0,
-        x: 50,
-      }, {
-        opacity: 1,
-        x: 0,
-        duration: 1,
-        stagger: 0.2,
-        ease: "power2.out",
-      });
+      gsap.fromTo(
+        icons,
+        {
+          opacity: 0,
+          x: 50,
+        },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1,
+          stagger: 0.2,
+          ease: "power2.out",
+        }
+      );
     }
   }, []);
 
@@ -72,18 +84,48 @@ const HeaderSection = () => {
           <div className="flex-[1] flex-start">
             <Image src={Logo} alt="Logo" className="w-20 object-cover logo" />
           </div>
-          <div className="flex-[1] flex-center gap-5">
-            {["HOME", "ABOUT", "PORTFOLIO", "PAGES", "CONTACT", "BLOG"].map((link, index) => (
-              <Link key={index} href="#" className="text-black font-Merienda font-bold nav-link">
-                {link}
-              </Link>
-            ))}
+          <div className="flex-[1] hidden lg:flex-center gap-5">
+            {["HOME", "ABOUT", "PORTFOLIO", "PAGES", "CONTACT", "BLOG"].map(
+              (link, index) => (
+                <Link
+                  key={index}
+                  href="#"
+                  className="text-black font-Merienda font-bold nav-link"
+                >
+                  {link}
+                </Link>
+              )
+            )}
           </div>
-          <div className="flex-[1] flex-end gap-5">
-            <Image src={SearchIcon} alt="Search" className="object-cover icon" />
+          <div className="flex-[1] hidden lg:flex-end gap-5">
+            <Image
+              src={SearchIcon}
+              alt="Search"
+              className="object-cover icon"
+            />
             <Image src={UserIcon} alt="User" className="object-cover icon" />
             <Image src={CartIcon} alt="Cart" className="object-cover icon" />
-            <Image src={LocationPinIcon} alt="Location" className="object-cover icon" />
+            <Image
+              src={LocationPinIcon}
+              alt="Location"
+              className="object-cover icon"
+            />
+          </div>
+          <div className="flex-[1] flex-end lg:hidden">
+            <Sheet>
+              <SheetTrigger>
+                <Image src={MenuIcon} alt="" className="object-cover invert" />
+              </SheetTrigger>
+              <SheetContent>
+                <SheetHeader>
+                  <SheetTitle>Are you absolutely sure?</SheetTitle>
+                  <SheetDescription>
+                    This action cannot be undone. This will permanently delete
+                    your account and remove your data from our servers.
+                  </SheetDescription>
+                </SheetHeader>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </main>

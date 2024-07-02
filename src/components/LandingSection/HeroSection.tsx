@@ -23,7 +23,7 @@ const HeroSection = () => {
         ease: "power2.out",
         onComplete: () => {
           gsap.to(image, {
-            y: 20,
+            y: 10,
             duration: 1,
             repeat: -1,
             yoyo: true,
@@ -63,25 +63,25 @@ const HeroSection = () => {
   return (
     <section className="w-full bg-hero">
       <main className="max-w-[1380px] m-auto">
-        <div className="h-screen w-full flex-between flex-col lg:flex-row px-5">
-          <div className="flex-[1] flex flex-col gap-10 items-start justify-center">
+        <div className="min-h-fit lg:h-[70vh] pt-28 lg:pt-10 w-full flex-between flex-col lg:flex-row px-5 gap-20 lg:gap-0">
+          <div className="flex-[1] w-full flex flex-col gap-10 items-start justify-center pt-20 lg:pt-0">
             <div className="flex flex-col gap-5">
-              <h1 className="text-2xl md:text-5xl font-Merienda font-bold heading">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-Merienda font-bold heading">
                 Quality Products
               </h1>
-              <h1 className="text-2xl md:text-5xl font-Merienda font-bold heading">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-Merienda font-bold heading">
                 Bakery Items
               </h1>
             </div>
-            <Button className="py-5 px-5 text-lg md:text-xl font-Merienda font-bold rounded-full hero-button">
+            <Button className="py-5 px-5 text-lg bg-[#F7553E] hover:bg-[#d44835] md:text-xl font-Merienda font-bold rounded-full hero-button">
               SHOP NOW
             </Button>
           </div>
-          <div className="flex-[1] flex-center">
+          <div className="flex-[1] w-full flex-end lg;flex-center">
             <Image
               src={HeroBannerShape}
               alt=""
-              className="w-full object-cover box"
+              className="flex-[1] lg:w-full object-cover box"
             />
           </div>
         </div>
