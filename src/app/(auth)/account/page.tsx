@@ -8,7 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from "next/navigation";
 
-const page = () => {
+const Page = () => {
   const router = useRouter();
   const [mobileNumber, setMobileNumber] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -176,4 +176,4 @@ const page = () => {
   );
 }
 
-export default page
+export default Page
