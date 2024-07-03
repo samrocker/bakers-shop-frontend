@@ -94,7 +94,7 @@ const page = () => {
         <div className="h-screen w-full flex-center px-5">
           <div className="min-h-fit w-full flex-between flex-col-reverse lg:flex-row bg-white rounded-3xl gap-5 lg:gap-0 py-20 lg:py-0">
             <div className="flex-[1] w-full flex-center flex-col gap-10 px-5">
-              <h1 className="text-2xl md:text-4xl font-Lora font-bold">
+              <h1 className="text-2xl md:text-4xl font-Merienda font-bold">
                 {isRegistered ? "Verify Your OTP" : "Create Your Account"}
               </h1>
               {!isRegistered ? (
@@ -104,7 +104,7 @@ const page = () => {
                     placeholder="Phone Number"
                     value={mobileNumber}
                     onChange={(e) => setMobileNumber(e.target.value)}
-                    className="py-2 px-5 w-[350px] flex-start border-[1px] border-black/75 placeholder:text-black/50 placeholder:font-Lora placeholder:font-medium rounded-lg"
+                    className="py-2 px-5 w-[350px] flex-start border-[1px] border-black/75 placeholder:text-black/50 placeholder:font-Merienda placeholder:font-medium rounded-lg"
                     aria-label="Phone Number"
                   />
                   <input
@@ -112,7 +112,7 @@ const page = () => {
                     placeholder="Password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="py-2 px-5 w-[350px] flex-start border-[1px] border-black/75 placeholder:text-black/50 placeholder:font-Lora placeholder:font-medium rounded-lg"
+                    className="py-2 px-5 w-[350px] flex-start border-[1px] border-black/75 placeholder:text-black/50 placeholder:font-Merienda placeholder:font-medium rounded-lg"
                     aria-label="Password"
                   />
                   <div className="flex-center gap-2">
@@ -126,7 +126,7 @@ const page = () => {
                     />
                     <label
                       htmlFor="agree"
-                      className="text-xs md:text-sm text-black font-Lora font-normal"
+                      className="text-xs md:text-sm text-black font-Merienda font-normal"
                     >
                       Do you agree with our
                       <span className="text-link"> terms and conditions?</span>
@@ -135,7 +135,7 @@ const page = () => {
                   <Button
                     type="submit"
                     disabled={loading}
-                    className={`py-2 px-5 min-w-[350px] flex-center rounded-lg text-lg font-Lora font-bold cursor-pointer ${
+                    className={`py-2 px-5 min-w-[350px] flex-center rounded-lg text-lg font-Merienda font-bold cursor-pointer ${
                       loading ? "bg-gray-500" : "bg-[#F7553E] hover:bg-[#d44835] text-white"
                     }`}
                   >
@@ -149,13 +149,13 @@ const page = () => {
                     placeholder="Enter OTP"
                     value={otp}
                     onChange={(e) => setOtp(e.target.value)}
-                    className="py-2 px-5 w-[350px] flex-start border-[1px] border-black/75 placeholder:text-black/50 placeholder:font-Lora placeholder:font-medium rounded-lg"
+                    className="py-2 px-5 w-[350px] flex-start border-[1px] border-black/75 placeholder:text-black/50 placeholder:font-Merienda placeholder:font-medium rounded-lg"
                     aria-label="Enter OTP"
                   />
                   <Button
                     type="submit"
                     disabled={loading}
-                    className={`py-2 px-5 min-w-[350px] flex-center rounded-lg text-lg font-Lora font-bold cursor-pointer ${
+                    className={`py-2 px-5 min-w-[350px] flex-center rounded-lg text-lg font-Merienda font-bold cursor-pointer ${
                       loading ? "bg-gray-500" : "bg-[#F7553E] hover:bg-[#d44835] text-white"
                     }`}
                   >
