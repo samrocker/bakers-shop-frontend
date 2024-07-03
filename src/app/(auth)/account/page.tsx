@@ -1,15 +1,14 @@
 'use client'
-
 import { Button } from "@/components/ui/button";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import axios from "axios";
-import image1 from '../../../../public/images/product-3.jpg';
+import image1 from '../../../../public/images/Auth_Banner.jpg';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from "next/navigation";
 
-const Page = () => {
+const page = () => {
   const router = useRouter();
   const [mobileNumber, setMobileNumber] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -99,13 +98,13 @@ const Page = () => {
                 {isRegistered ? "Verify Your OTP" : "Create Your Account"}
               </h1>
               {!isRegistered ? (
-                <form onSubmit={handleSubmit} className="flex flex-col gap-5 items-center lg:items-start justify-center">
+                <form onSubmit={handleSubmit} className="flex flex-col gap-5 items-center justify-center">
                   <input
                     type="tel"
                     placeholder="Phone Number"
                     value={mobileNumber}
                     onChange={(e) => setMobileNumber(e.target.value)}
-                    className="py-2 px-5 w-[250px] flex-start border-[1px] border-black/75 placeholder:text-black/50 placeholder:font-Lora placeholder:font-medium rounded-lg"
+                    className="py-2 px-5 w-[350px] flex-start border-[1px] border-black/75 placeholder:text-black/50 placeholder:font-Lora placeholder:font-medium rounded-lg"
                     aria-label="Phone Number"
                   />
                   <input
@@ -113,7 +112,7 @@ const Page = () => {
                     placeholder="Password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="py-2 px-5 w-[250px] flex-start border-[1px] border-black/75 placeholder:text-black/50 placeholder:font-Lora placeholder:font-medium rounded-lg"
+                    className="py-2 px-5 w-[350px] flex-start border-[1px] border-black/75 placeholder:text-black/50 placeholder:font-Lora placeholder:font-medium rounded-lg"
                     aria-label="Password"
                   />
                   <div className="flex-center gap-2">
@@ -136,7 +135,7 @@ const Page = () => {
                   <Button
                     type="submit"
                     disabled={loading}
-                    className={`py-2 px-5 min-w-[250px] flex-center rounded-lg text-lg font-Lora font-bold cursor-pointer ${
+                    className={`py-2 px-5 min-w-[350px] flex-center rounded-lg text-lg font-Lora font-bold cursor-pointer ${
                       loading ? "bg-gray-500" : "bg-[#F7553E] hover:bg-[#d44835] text-white"
                     }`}
                   >
@@ -150,13 +149,13 @@ const Page = () => {
                     placeholder="Enter OTP"
                     value={otp}
                     onChange={(e) => setOtp(e.target.value)}
-                    className="py-2 px-5 w-[250px] flex-start border-[1px] border-black/75 placeholder:text-black/50 placeholder:font-Lora placeholder:font-medium rounded-lg"
+                    className="py-2 px-5 w-[350px] flex-start border-[1px] border-black/75 placeholder:text-black/50 placeholder:font-Lora placeholder:font-medium rounded-lg"
                     aria-label="Enter OTP"
                   />
                   <Button
                     type="submit"
                     disabled={loading}
-                    className={`py-2 px-5 min-w-[250px] flex-center rounded-lg text-lg font-Lora font-bold cursor-pointer ${
+                    className={`py-2 px-5 min-w-[350px] flex-center rounded-lg text-lg font-Lora font-bold cursor-pointer ${
                       loading ? "bg-gray-500" : "bg-[#F7553E] hover:bg-[#d44835] text-white"
                     }`}
                   >
@@ -165,8 +164,8 @@ const Page = () => {
                 </form>
               )}
             </div>
-            <div className="h-full flex-[1] w-full flex-center">
-              <Image src={image1} width={400} height={400} alt="Product Image" className="w-full object-cover rounded-r-3xl hidden lg:block" />
+            <div className="h-full flex-[1] w-full flex-end">
+              <Image src={image1} width={580} height={580} alt="Product Image" className=" object-cover rounded-r-3xl hidden lg:block" />
             </div>
           </div>
         </div>
@@ -175,6 +174,6 @@ const Page = () => {
       {/* <FooterSection /> */}
     </section>
   );
-};
+}
 
-export default Page;
+export default page

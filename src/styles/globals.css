@@ -90,6 +90,9 @@
     .bg-hero {
       background-color: #FAF5E1;
     }
+    .bg-auth {
+      background-color: #f0f0f0;
+    }
   }
 
   @layer base {

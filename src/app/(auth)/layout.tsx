@@ -8,7 +8,7 @@ const Dashbpardlayout = async ({ children }: { children: React.ReactNode }) => {
             <main className="flex-grow">
                 {/* <HeaderSection /> */}
                 {children}
-                <FooterSection />
+                {/* <FooterSection /> */}
             </main>
         </div>
     );

@@ -61,7 +61,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="w-full bg-hero">
+    <section className="w-full">
       <main className="max-w-[1380px] m-auto">
         <div className="min-h-fit lg:h-[70vh] pt-28 lg:pt-10 w-full flex-between flex-col lg:flex-row px-5 gap-20 lg:gap-0">
           <div className="flex-[1] w-full flex flex-col gap-10 items-start justify-center pt-20 lg:pt-0">
