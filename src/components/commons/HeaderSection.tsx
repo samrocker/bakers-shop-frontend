@@ -1,7 +1,5 @@
-"use client";
-
 import Link from "next/link";
-import React, { useEffect } from "react";
+import React from "react";
 import {
   Sheet,
   SheetContent,
@@ -18,112 +16,109 @@ import CartIcon from "../../../public/icons/shopping-cart-line.png";
 import LocationPinIcon from "../../../public/icons/map-pin-line.png";
 import MenuIcon from "../../../public/icons/menu-line.png";
 import { Button } from "../ui/button";
-import { gsap } from "gsap";
 
 const HeaderSection = () => {
-  useEffect(() => {
-    const logo = document.querySelector(".logo");
-    const navLinks = document.querySelectorAll(".nav-link");
-    const icons = document.querySelectorAll(".icon");
-
-    if (logo) {
-      gsap.fromTo(
-        logo,
-        {
-          opacity: 0,
-          x: -50,
-        },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 1,
-          ease: "power2.out",
-        }
-      );
-    }
-
-    if (navLinks.length) {
-      gsap.fromTo(
-        navLinks,
-        {
-          opacity: 0,
-          y: -50,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          stagger: 0.2,
-          ease: "power2.out",
-        }
-      );
-    }
-
-    if (icons.length) {
-      gsap.fromTo(
-        icons,
-        {
-          opacity: 0,
-          x: 50,
-        },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 1,
-          stagger: 0.2,
-          ease: "power2.out",
-        }
-      );
-    }
-  }, []);
-
   return (
-    <section className="w-full absolute top-0">
+    <section className="w-full">
       <main className="max-w-[1380px] m-auto">
-        <div className="pt-5 px-5 lg:px-0 w-full flex-between">
-          <div className="flex-[1] flex-start">
-            <Image src={Logo} alt="Logo" className="w-20 object-cover logo" />
+        <div className="pt-5 px-5 lg:pg-0 w-full flex-between">
+          <div className="flex--[1] flex-start gap-5">
+            <Image src={Logo} alt="/" className="w-20 object-cover" />
           </div>
-          <div className="flex-[1] hidden lg:flex-center gap-5">
-            {["HOME", "ABOUT", "PORTFOLIO", "PAGES", "CONTACT", "BLOG"].map(
-              (link, index) => (
-                <Link
-                  key={index}
-                  href="#"
-                  className="text-black font-Merienda font-bold nav-link"
-                >
-                  {link}
+          <div className="flex--[1] hidden lg:flex-center gap-5">
+            <Link href="/" className="text-black font-Merienda font-bold">
+              SHOP ALL
+            </Link>
+            <Link href="/" className="text-black font-Merienda font-bold">
+              BEST DEALS
+            </Link>
+            <Link href="shop.marutibakersmart.com" className="text-black font-Merienda font-bold">
+            ABOUT US
+            </Link>
+            <Link href="/" className="text-black font-Merienda font-bold">
+              NEW LAUNCHES
+            </Link>
+            <Link href="/" className="text-black font-Merienda font-bold">
+              REWARDS
+            </Link>
+          </div>
+          <div className="flex--[1] hidden lg:flex-end gap-5">
+            <Link href="/">
+              <Image src={SearchIcon} alt="/" className="object-cover" />
+            </Link>
+            <div className="flex--[1] flex-end gap-5">
+              <Link href="/">
+                <Image src={UserIcon} alt="/" className="object-cover" />
+              </Link>
+              <div className="flex--[1] flex-end gap-5">
+                <Link href="/">
+                  <Image src={CartIcon} alt="/" className="object-cover" />
                 </Link>
-              )
-            )}
+              </div>
+              <div className="flex--[1] flex-end gap-5">
+                <Link href="/">
+                  <Image
+                    src={LocationPinIcon}
+                    alt="/"
+                    className="object-cover"
+                  />
+                </Link>
+              </div>
+            </div>
           </div>
-          <div className="flex-[1] hidden lg:flex-end gap-5">
-            <Image
-              src={SearchIcon}
-              alt="Search"
-              className="object-cover icon"
-            />
-            <Image src={UserIcon} alt="User" className="object-cover icon" />
-            <Image src={CartIcon} alt="Cart" className="object-cover icon" />
-            <Image
-              src={LocationPinIcon}
-              alt="Location"
-              className="object-cover icon"
-            />
-          </div>
-          <div className="flex-[1] flex-end lg:hidden">
+          <div className="flex-[1] flex-end lg:hidden gap-5">
+          <Link href="/">
+              <Image src={SearchIcon} alt="/" className="object-cover" />
+            </Link>
             <Sheet>
               <SheetTrigger>
-                <Image src={MenuIcon} alt="" className="object-cover invert" />
+                <Image src={MenuIcon} alt="/" className="object-cover invert" />
               </SheetTrigger>
               <SheetContent>
-                <SheetHeader>
-                  <SheetTitle>Are you absolutely sure?</SheetTitle>
-                  <SheetDescription>
-                    This action cannot be undone. This will permanently delete
-                    your account and remove your data from our servers.
-                  </SheetDescription>
-                </SheetHeader>
+                <div className="h-screen w-full flex flex-col gap-10 items-start justify-center">
+                  <div className="flex flex-col gap-5 items-start justify-center">
+                    <Link href="/" className="text-2xl text-black font-Merienda font-medium">
+                      SHOP ALL
+                    </Link>
+                    <Link href="/" className="text-2xl text-black font-Merienda font-medium">
+                      BEST DEALS
+                    </Link>
+                    <Link href="/" className="text-2xl text-black font-Merienda font-medium">
+                      GIFTING
+                    </Link>
+                    <Link href="/" className="text-2xl text-black font-Merienda font-medium">
+                      NEW LAUNCHES
+                    </Link>
+                    <Link href="/" className="text-2xl text-black font-Merienda font-medium">
+                      REWARDS
+                    </Link>
+                  </div>
+                  <div className="flex--[1] flex-end gap-5">
+                    <div className="flex-[1] flex-end gap-5"> 
+                      <Link href="/">
+                        <Image src={UserIcon} alt="/" className="object-cover" />
+                      </Link>
+                      <div className="flex--[1] flex-end gap-5">
+                        <Link href="/">
+                          <Image
+                            src={CartIcon}
+                            alt="/"
+                            className="object-cover"
+                          />
+                        </Link>
+                      </div>
+                      <div className="flex--[1] flex-end gap-5">
+                        <Link href="/">
+                          <Image
+                            src={LocationPinIcon}
+                            alt="/"
+                            className="object-cover"
+                          />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </SheetContent>
             </Sheet>
           </div>

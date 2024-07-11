@@ -21,7 +21,7 @@ const SaleSetion = () => {
                 Products
               </h1>
                 </div>
-              <Button className="py-5 px-5 bg-[#F7553E] hover:bg-[#d44835] text-xs md:text-sm font-Merienda font-bold rounded-full hero-button">
+              <Button className="py-3 px-3 bg-[#F7553E] hover:bg-[#d44835] text-xs md:text-sm font-Merienda font-bold rounded-full hero-button">
                 SHOP NOW
               </Button>
             </div>
@@ -38,7 +38,7 @@ const SaleSetion = () => {
               Pastry
               </h1>
                 </div>
-              <Button className="py-5 px-5 bg-[#F7553E] hover:bg-[#d44835] text-xs md:text-sm font-Merienda font-bold rounded-full hero-button">
+              <Button className="py-3 px-3 bg-[#F7553E] hover:bg-[#d44835] text-xs md:text-sm font-Merienda font-bold rounded-full hero-button">
                 SHOP NOW
               </Button>
             </div>

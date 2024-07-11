@@ -29,12 +29,12 @@ const FooterSection = () => {
                 </div>
                 <div className='flex-[1] w-full flex items-start justify-between'>
                     <div className='flex flex-col gap-5 items-start justify-center'>
-                    <Link href='' className='text-lg text-black font-bold'>FAO</Link>
-                    <Link href='' className='text-lg text-black font-bold'>ABOUT</Link>
-                    <Link href='' className='text-lg text-black font-bold'>PRIVACY</Link>
-                    <Link href='' className='text-lg text-black font-bold'>TERMS OF SERVICE</Link>
-                    <Link href='' className='text-lg text-black font-bold'>TERMS OF USE</Link>
-                    <Link href='' className='text-lg text-black font-bold'>CONTACT</Link>
+                    <Link href='' className='text-black font-Merienda font-bold'>FAO</Link>
+                    <Link href='' className='text-black font-Merienda font-bold'>ABOUT</Link>
+                    <Link href='' className='text-black font-Merienda font-bold'>PRIVACY</Link>
+                    <Link href='' className='text-black font-Merienda font-bold'>TERMS OF SERVICE</Link>
+                    <Link href='' className='text-black font-Merienda font-bold'>TERMS OF USE</Link>
+                    <Link href='' className='text-black font-Merienda font-bold'>CONTACT</Link>
                     </div>
                     <div className='flex-start'>
                         <span className='pop py-3 px-3 rounded-full transition-bg border-2 border-black/50 hover:bg-black duration-300'>
