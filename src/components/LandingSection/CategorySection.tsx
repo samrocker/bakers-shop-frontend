@@ -12,7 +12,7 @@ const CategorySection = () => {
         <div className="py-20 w-full flex-between flex-col gap-16">
           <div className="flex-[1] w-full flex-center flex-col">
             <h1 className="text-2xl md:text-3xl lg:text-5xl font-Merienda font-bold">
-              Best Seller Of the month
+              Categories
             </h1>
           </div>
           <div className="flex-[1] w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 place-items-center">
