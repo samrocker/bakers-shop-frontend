@@ -11,7 +11,7 @@ const CategorySection = () => {
       <main className="max-w-[1380px] m-auto">
         <div className="py-20 w-full flex-between flex-col gap-16">
           <div className="flex-[1] w-full flex-center flex-col">
-            <h1 className="text-2xl md:text-3xl lg:text-5xl font-Merienda font-bold">
+            <h1 className="text-3xl md:text-3xl lg:text-5xl font-Merienda font-bold">
               Categories
             </h1>
           </div>

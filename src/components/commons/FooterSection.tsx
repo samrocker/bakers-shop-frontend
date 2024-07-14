@@ -10,10 +10,10 @@ import Link from 'next/link';
 
 const FooterSection = () => {
   return (
-    <section className='w-full bg-[#F5F5F5]'>
+    <section className='w-full'>
         <main className='max-w-[1380px] m-auto'>
             <div className='py-10 px-5 w-full flex-between flex-col lg:lfex-row lg:flex-row gap-5'>
-                <div className='flex-[1.3] w-full flex flex-col items-start justify-between gap-10 lg:gap-20'>
+                <div className='flex-[1.3] w-full hidden md:flex flex-col items-start justify-between gap-10 lg:gap-20'>
                     <div className='flex-[1] flex-start'>
                         <Image src={Logo} alt='' className='w-28 object-cover' />
                     </div>

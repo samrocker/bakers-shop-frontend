@@ -19,7 +19,7 @@ import { Button } from "../ui/button";
 
 const HeaderSection = () => {
   return (
-    <section className="w-full">
+    <section className="w-full sticky top-0 z-50">
       <main className="max-w-[1380px] m-auto">
         <div className="pt-5 px-5 lg:pg-0 w-full flex-between">
           <div className="flex--[1] flex-start gap-5">
