@@ -70,7 +70,7 @@ const BestSellerSection: React.FC = () => {
                     <div className="h-[400px] w-[280px] flex-between flex-col border-[1px] border-[#4b55633f] rounded-3xl p-2 gap-5">
                       <div className="flex-[2] w-full flex-center rounded-xl">
                         <Image
-                          src={product.image}
+                          src={product.image} 
                           alt={product.title}
                           width={150}
                           height={150}

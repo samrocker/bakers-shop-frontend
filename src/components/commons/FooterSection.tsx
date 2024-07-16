@@ -10,7 +10,7 @@ import Link from 'next/link';
 
 const FooterSection = () => {
   return (
-    <section className='w-full'>
+    <section className='w-full border-t-[1px] border-black/20'>
         <main className='max-w-[1380px] m-auto'>
             <div className='py-10 px-5 w-full flex-between flex-col lg:lfex-row lg:flex-row gap-5'>
                 <div className='flex-[1.3] w-full hidden md:flex flex-col items-start justify-between gap-10 lg:gap-20'>

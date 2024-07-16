@@ -19,9 +19,9 @@ import { Button } from "../ui/button";
 
 const HeaderSection = () => {
   return (
-    <section className="w-full sticky top-0 z-50">
+    <section className="w-full sticky top-0 z-50 bg-white shadow-b-2xl">
       <main className="max-w-[1380px] m-auto">
-        <div className="pt-5 px-5 lg:pg-0 w-full flex-between">
+        <div className="px-5 py-1 mt-5 w-full flex-between">
           <div className="flex--[1] flex-start gap-5">
             <Image src={Logo} alt="/" className="w-20 object-cover" />
           </div>
@@ -32,8 +32,8 @@ const HeaderSection = () => {
             <Link href="/" className="text-black font-Merienda font-bold">
               BEST DEALS
             </Link>
-            <Link href="shop.marutibakersmart.com" className="text-black font-Merienda font-bold">
-            ABOUT US
+            <Link href="https://shop.marutibakersmart.com" className="text-black font-Merienda font-bold" target="_blank">
+            PORTFOLIO
             </Link>
             <Link href="/" className="text-black font-Merienda font-bold">
               NEW LAUNCHES
