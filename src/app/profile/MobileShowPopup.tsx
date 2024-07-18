@@ -1,24 +1,29 @@
 // components/MobileShowPopup.tsx
 "use client";
-import MobileVerificationForm from "@/components/user/mobile/Mobile";
+import MobileVerificationForm from "@/components/mobile/Mobile";
 import axios from "axios";
-import { useSession } from "next-auth/react";
 import React, { useState, useEffect } from "react";
 
 interface UserData {
-  mobileVerified: boolean; // Add other properties of the user data object
+  mobileVerified: boolean;
 }
 
 const MobileShowPopup = () => {
   const [showPopup, setShowPopup] = useState<boolean>(false);
   const [userData, setUserData] = useState<UserData | null>(null);
-  const { data: session, status } = useSession();
+
+  // Example function to simulate getting user email
+  const getUserEmail = () => {
+    // Replace this with your actual logic to get the user email
+    return "user@example.com";
+  };
 
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        if (status === "authenticated" && session?.user?.email) {
-          const response = await axios.get(`/api/users/me?email=${session.user.email}`);
+        const email = getUserEmail();
+        if (email) {
+          const response = await axios.get(`/api/users/me?email=${email}`);
           const data: UserData = response.data;
           setUserData(data);
         }
@@ -28,7 +33,7 @@ const MobileShowPopup = () => {
     };
 
     fetchUserData();
-  }, [session, status]);
+  }, []);
 
   useEffect(() => {
     if (userData && !userData.mobileVerified) {
