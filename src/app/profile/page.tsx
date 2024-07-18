@@ -5,6 +5,7 @@ import MobileShowPopup from './MobileShowPopup';
 import Wishlist from './Wishlist';
 import { signOut } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
+import ProfilePage from '@/components/profileSection/ProfilePage';
 
 const Page = () => {
   const [activeTab, setActiveTab] = useState("tab1");
@@ -95,6 +96,7 @@ const Page = () => {
               <div>
                 <h2 className="text-xl font-bold">Profile</h2>
                 <p>Content for Profile goes here.</p>
+                <ProfilePage />
               </div>
             )}
             {activeTab === "tab5" && (

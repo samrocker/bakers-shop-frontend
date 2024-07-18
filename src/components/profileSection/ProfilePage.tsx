@@ -9,9 +9,6 @@ const ProfilePage = () => {
     <section>
         <main className='max-w-[1380px] m-auto'>
             <div className='py-5 px-5 w-full flex-between flex-col gap-10'>
-                <div className='flex-[1] w-full md:flex-center'>
-                    <Image src={BG} alt='' className='w-full object-cover' />
-                </div>
                 <div className='flex-[1] w-full flex-between flex flex-col-reverse lg:flex-row'>
                     <div className='flex-[2] w-full flex-start gap-5'>
                         <div className='h-20 w-20 rounded-full relative overflow-hidden'>
