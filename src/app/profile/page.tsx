@@ -34,39 +34,39 @@ const Page = () => {
         <h1 className="text-2xl font-semibold">My Account</h1>
         <div className="flex flex-wrap gap-10 flex-col lg:flex-row mt-10">
           <div className="flex-[1.5]">
-            <div className="w-full bg-white p-4 flex flex-col gap-2">
+            <div className="w-full bg-white p-4 flex flex-col gap-2 shadow-lg">
               <button
-                className={`px-4 py-2 text-left text-md rounded-lg ${activeTab === "tab1" ? "bg-[#fff] text-zinc-900 border-[1px]" : ""}`}
+                className={`px-4 py-5 text-left text-md font-Merienda font-bold rounded-lg ${activeTab === "tab1" ? "bg-[#fff] text-zinc-900 border-black/20 border-[1px]" : ""}`}
                 onClick={() => handleTabClick("tab1")}
               >
                 Address
               </button>
               <button
-                className={`px-4 py-2 text-left text-md rounded-lg ${activeTab === "tab2" ? "bg-[#fff] text-zinc-900 border-[1px]" : ""}`}
+                className={`px-4 py-5 text-left text-md font-Merienda font-bold rounded-lg ${activeTab === "tab2" ? "bg-[#fff] text-zinc-900 border-black/20 border-[1px]" : ""}`}
                 onClick={() => handleTabClick("tab2")}
               >
                 My Orders
               </button>
               <button
-                className={`px-4 py-2 text-left text-md rounded-lg ${activeTab === "tab3" ? "bg-[#fff] text-zinc-900 border-[1px]" : ""}`}
+                className={`px-4 py-5 text-left text-md font-Merienda font-bold rounded-lg ${activeTab === "tab3" ? "bg-[#fff] text-zinc-900 border-black/20 border-[1px]" : ""}`}
                 onClick={() => handleTabClick("tab3")}
               >
                 My Wishlist
               </button>
               <button
-                className={`px-4 py-2 text-left text-md rounded-lg ${activeTab === "tab4" ? "bg-[#fff] text-zinc-900 border-[1px]" : ""}`}
+                className={`px-4 py-5 text-left text-md font-Merienda font-bold rounded-lg ${activeTab === "tab4" ? "bg-[#fff] text-zinc-900 border-black/20 border-[1px]" : ""}`}
                 onClick={() => handleTabClick("tab4")}
               >
                 Profile
               </button>
               <button
-                className={`px-4 py-2 text-left text-md rounded-lg ${activeTab === "tab5" ? "bg-[#fff] text-zinc-900 border-[1px]" : ""}`}
+                className={`px-4 py-5 text-left text-md font-Merienda font-bold rounded-lg ${activeTab === "tab5" ? "bg-[#fff] text-zinc-900 border-black/20 border-[1px]" : ""}`}
                 onClick={() => handleTabClick("tab5")}
               >
                 Change Password
               </button>
               <button
-                className="bg-black p-3 text-white rounded-md"
+                className="flex-center gap-3 bg-black p-3 text-white rounded-md"
                 onClick={LogOut}
               >
                 Log Out <FaSignOutAlt />
