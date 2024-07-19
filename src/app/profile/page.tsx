@@ -2,10 +2,11 @@
 import React, { useState } from 'react';
 import { FaChevronRight, FaSignOutAlt } from 'react-icons/fa';
 import MobileShowPopup from './MobileShowPopup';
-import Wishlist from './Wishlist';
 import { signOut } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
-import ProfilePage from '@/components/profileSection/ProfilePage';
+import Address from '@/components/profileSection/Address';
+import UpdateProfile from '@/components/profileSection/UpdateProfile';
+import ForgotPassword from '@/components/profileSection/ForgotPassword';
 
 const Page = () => {
   const [activeTab, setActiveTab] = useState("tab1");
@@ -46,25 +47,19 @@ const Page = () => {
                 className={`px-4 py-5 text-left text-md font-Merienda font-bold rounded-lg ${activeTab === "tab2" ? "bg-[#fff] text-zinc-900 border-black/20 border-[1px]" : ""}`}
                 onClick={() => handleTabClick("tab2")}
               >
-                My Orders
-              </button>
-              <button
-                className={`px-4 py-5 text-left text-md font-Merienda font-bold rounded-lg ${activeTab === "tab3" ? "bg-[#fff] text-zinc-900 border-black/20 border-[1px]" : ""}`}
-                onClick={() => handleTabClick("tab3")}
-              >
-                My Wishlist
+                update profile
               </button>
               <button
                 className={`px-4 py-5 text-left text-md font-Merienda font-bold rounded-lg ${activeTab === "tab4" ? "bg-[#fff] text-zinc-900 border-black/20 border-[1px]" : ""}`}
                 onClick={() => handleTabClick("tab4")}
               >
-                Profile
+                forgot Password
               </button>
               <button
                 className={`px-4 py-5 text-left text-md font-Merienda font-bold rounded-lg ${activeTab === "tab5" ? "bg-[#fff] text-zinc-900 border-black/20 border-[1px]" : ""}`}
                 onClick={() => handleTabClick("tab5")}
               >
-                Change Password
+                layout
               </button>
               <button
                 className="flex-center gap-3 bg-black p-3 text-white rounded-md"
@@ -77,32 +72,29 @@ const Page = () => {
           <div className="flex-[3]">
             {activeTab === "tab1" && (
               <div>
-                <h2 className="text-xl font-bold">Address</h2>
-                <p>Content for Address goes here.</p>
+                {/* <h2 className="text-xl font-bold">Address</h2>
+                <p>Content for Address goes here.</p> */}
+                <Address />
               </div>
             )}
             {activeTab === "tab2" && (
               <div>
-                <h2 className="text-xl font-bold">My Orders</h2>
-                <p>Content for My Orders goes here.</p>
+                {/* <h2 className="text-xl font-bold">update profile</h2>
+                <p>Content for update profile goes here.</p> */}
+                <UpdateProfile />
               </div>
-            )}
-            {activeTab === "tab3" && (
-              <>
-                <Wishlist />
-              </>
             )}
             {activeTab === "tab4" && (
               <div>
-                <h2 className="text-xl font-bold">Profile</h2>
-                <p>Content for Profile goes here.</p>
-                <ProfilePage />
+                {/* <h2 className="text-xl font-bold"> forgot Password</h2>
+                <p>Content for  forgot Password goes here.</p>                 */}
+                <ForgotPassword />
               </div>
             )}
             {activeTab === "tab5" && (
               <div>
-                <h2 className="text-xl font-bold">Change Password</h2>
-                <p>Content for Change Password goes here.</p>
+                <h2 className="text-xl font-bold">Layout</h2>
+                <p>Content for Layout goes here.</p>
               </div>
             )}
           </div>
