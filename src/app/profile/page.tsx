@@ -1,14 +1,12 @@
-"use client";
+'use client'
 import React, { useEffect, useState } from 'react';
 import { FaChevronRight, FaSignOutAlt } from 'react-icons/fa';
-import MobileShowPopup from './MobileShowPopup';
-import { signOut } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import Address from '@/components/profileSection/Address';
 import ForgotPassword from '@/components/profileSection/ForgotPassword';
 import GetProfile from '@/components/profileSection/updateProfile/getProfile';
 
-const Page = () => {
+const ProfileContent = () => {
   const [activeTab, setActiveTab] = useState("tab1");
   const router = useRouter();
 
@@ -16,19 +14,17 @@ const Page = () => {
     setActiveTab(tabName);
   };
 
-
   useEffect(() => {
     const token = localStorage.getItem("Token");
-    
+
     if (!token) {
       router.push("/");
     }
-  }, []);
-
+  }, [router]);
 
   const LogOut = async () => {
     try {
-      localStorage.removeItem("Token")
+      localStorage.removeItem("Token");
       router.push('/account'); // redirect to login page after logout
     } catch (error) {
       console.error('Error during logout:', error);
@@ -37,7 +33,6 @@ const Page = () => {
 
   return (
     <div className='bg-[#FFF7F3] p-10'>
-      <MobileShowPopup />
       <div className="max-w-[1280px] m-auto p-10 lg:p-0">
         <span className="text-sm text-light flex flex-row items-center">
           Home <FaChevronRight style={{ fontSize: "20px" }} />
@@ -82,22 +77,16 @@ const Page = () => {
           <div className="flex-[3]">
             {activeTab === "tab1" && (
               <div>
-                {/* <h2 className="text-xl font-bold">Address</h2>
-                <p>Content for Address goes here.</p> */}
                 <Address />
               </div>
             )}
             {activeTab === "tab2" && (
               <div>
-                {/* <h2 className="text-xl font-bold">update profile</h2>
-                <p>Content for update profile goes here.</p> */}
                 <GetProfile />
               </div>
             )}
             {activeTab === "tab4" && (
               <div>
-                {/* <h2 className="text-xl font-bold"> forgot Password</h2>
-                <p>Content for  forgot Password goes here.</p>                 */}
                 <ForgotPassword />
               </div>
             )}
@@ -114,4 +103,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default ProfileContent;
