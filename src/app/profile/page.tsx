@@ -5,8 +5,8 @@ import MobileShowPopup from './MobileShowPopup';
 import { signOut } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import Address from '@/components/profileSection/Address';
-import UpdateProfile from '@/components/profileSection/UpdateProfile';
 import ForgotPassword from '@/components/profileSection/ForgotPassword';
+import GetProfile from '@/components/profileSection/updateProfile/getProfile';
 
 const Page = () => {
   const [activeTab, setActiveTab] = useState("tab1");
@@ -91,7 +91,7 @@ const Page = () => {
               <div>
                 {/* <h2 className="text-xl font-bold">update profile</h2>
                 <p>Content for update profile goes here.</p> */}
-                <UpdateProfile />
+                <GetProfile />
               </div>
             )}
             {activeTab === "tab4" && (
