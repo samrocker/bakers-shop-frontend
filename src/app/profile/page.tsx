@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaChevronRight, FaSignOutAlt } from 'react-icons/fa';
 import MobileShowPopup from './MobileShowPopup';
 import { signOut } from 'next-auth/react';
@@ -16,10 +16,20 @@ const Page = () => {
     setActiveTab(tabName);
   };
 
+
+  useEffect(() => {
+    const token = localStorage.getItem("Token");
+    
+    if (!token) {
+      router.push("/");
+    }
+  }, []);
+
+
   const LogOut = async () => {
     try {
-      await signOut({ redirect: false });
-      router.push('/login'); // redirect to login page after logout
+      localStorage.removeItem("Token")
+      router.push('/account'); // redirect to login page after logout
     } catch (error) {
       console.error('Error during logout:', error);
     }

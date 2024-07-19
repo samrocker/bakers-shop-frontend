@@ -17,6 +17,7 @@ const Page = () => {
   const [isRegistered, setIsRegistered] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
 
+
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -80,12 +81,12 @@ const Page = () => {
   };
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("Token");
     
     if (token) {
       router.push("/");
     }
-  }, [router]);
+  }, []);
 
 
   return (
