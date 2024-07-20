@@ -60,7 +60,7 @@ const ProductsPage = () => {
                 </Carousel>
               </div>
             </div>
-            <div className="flex-[1.5] flex-center flex-col gap-5">
+            <div className="flex-[1.5] flex flex-col gap-5 items-start justify-start">
               <h1>Product Name</h1>
               <p>SKU:</p>
               <p>Brand</p>
