@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Button } from "../ui/button";
 
 interface Address {
   id : string;
@@ -101,7 +102,7 @@ const GetAddress: React.FC = () => {
                 <p className="text-sm text-gray-700">
                   Country: {address.country}
                 </p>
-                <button onClick={() => deleteAddress(address.id)}>delete</button>
+                <Button variant="destructive" className="mt-3 font-Merienda font-bold" onClick={() => deleteAddress(address.id)}>delete</Button>
               </div>
             ))}
           </div>
