@@ -8,6 +8,7 @@ import GetProfile from '@/components/profileSection/updateProfile/getProfile';
 
 const ProfileContent = () => {
   const [activeTab, setActiveTab] = useState("tab1");
+  const [isMounted, setIsMounted] = useState(false);
   const router = useRouter();
 
   const handleTabClick = (tabName: string) => {
@@ -15,21 +16,30 @@ const ProfileContent = () => {
   };
 
   useEffect(() => {
-    const token = localStorage.getItem("Token");
+    setIsMounted(true);
+    if (typeof window !== "undefined") {
+      const token = localStorage.getItem("Token");
 
-    if (!token) {
-      router.push("/");
+      if (!token) {
+        router.push("/");
+      }
     }
   }, [router]);
 
   const LogOut = async () => {
     try {
-      localStorage.removeItem("Token");
+      if (typeof window !== "undefined") {
+        localStorage.removeItem("Token");
+      }
       router.push('/account'); // redirect to login page after logout
     } catch (error) {
       console.error('Error during logout:', error);
     }
   };
+
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <div className='bg-[#FFF7F3] p-10'>
@@ -52,19 +62,19 @@ const ProfileContent = () => {
                 className={`px-4 py-5 text-left text-md font-Merienda font-bold rounded-lg ${activeTab === "tab2" ? "bg-[#fff] text-zinc-900 border-black/20 border-[1px]" : ""}`}
                 onClick={() => handleTabClick("tab2")}
               >
-                update profile
+                Update Profile
               </button>
               <button
                 className={`px-4 py-5 text-left text-md font-Merienda font-bold rounded-lg ${activeTab === "tab4" ? "bg-[#fff] text-zinc-900 border-black/20 border-[1px]" : ""}`}
                 onClick={() => handleTabClick("tab4")}
               >
-                forgot Password
+                Forgot Password
               </button>
               <button
                 className={`px-4 py-5 text-left text-md font-Merienda font-bold rounded-lg ${activeTab === "tab5" ? "bg-[#fff] text-zinc-900 border-black/20 border-[1px]" : ""}`}
                 onClick={() => handleTabClick("tab5")}
               >
-                layout
+                Layout
               </button>
               <button
                 className="flex-center gap-3 bg-black p-3 text-white rounded-md"
